@@ -1,0 +1,30 @@
+//      Training
+//      www.codewars.com
+
+/*  Instructions
+Return the number (count) of vowels in the given string.
+We will consider "a, e, i, o, u" as vowels for this Kata (but not y).
+The input string will only consist of lower case letters and/or spaces.
+
+    Example
+"abracadabra"                           ==  5
+"my pyx"                                ==  0
+"o a kak ushakov lil vo kashu kakao"    ==  13
+*/
+
+function getCount(str) {
+    let vowelsCount = 0
+    const vowels = 'aeiou'
+
+    for (n = 0; n < vowels.length; n++) {
+        for (m = 0; m < str.length; m++) {
+            if (str[m]===vowels[n]) {
+                vowelsCount ++
+            }
+        }
+    }
+
+    return vowelsCount;
+}
+
+// You have passed all of the tests! :)
