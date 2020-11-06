@@ -13,18 +13,8 @@ The input string will only consist of lower case letters and/or spaces.
 */
 
 function getCount(str) {
-    let vowelsCount = 0
     const vowels = 'aeiou'
-
-    for (n = 0; n < vowels.length; n++) {
-        for (m = 0; m < str.length; m++) {
-            if (str[m]===vowels[n]) {
-                vowelsCount ++
-            }
-        }
-    }
-
-    return vowelsCount;
+    return  str.toLowerCase().split('').filter(item => vowels.includes(item)).length
 }
 
 // You have passed all of the tests! :)
