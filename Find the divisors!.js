@@ -10,8 +10,6 @@ divisors(25); // should return [5]
 divisors(13); // should return "13 is prime"
 */
 
-const integer = 25
-
 function divisors(integer) {
     let array = []
     for (let n = 2; n < integer; n++) {
@@ -20,9 +18,8 @@ function divisors(integer) {
         }
     }
     if (array.length > 0) {
-        console.log(array)
         return array
-    } else console.log(`${integer} is prime`)
+    } else return `${integer} is prime`
 }
 
-divisors(integer)
+// You have passed all of the tests! :)
