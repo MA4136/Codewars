@@ -1,4 +1,4 @@
-//      Training
+//      String ends with?
 //      www.codewars.com
 
 /*  Instructions
