@@ -13,7 +13,6 @@ highAndLow("1 9 3 4 -5") ==> "9 -5"
 
 function highAndLow(str) {
      return Math.max(...str.split(" ")) + " " + Math.min(...str.split(" "))
-
 }
 
 // You have passed all of the tests! :)

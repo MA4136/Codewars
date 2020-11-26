@@ -9,8 +9,8 @@ String will never be empty and you do not need to account for different data typ
 "bitcoin take over the world maybe who knows perhaps" ==> 3
 */
 
-function findShort(str){
-    return Math.min(...str.split(" ").map(item=>item.length))
+function findShort(str) {
+    return Math.min(...str.split(" ").map(item => item.length))
 }
 
 // You have passed all of the tests! :)

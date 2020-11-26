@@ -1,4 +1,4 @@
-//      A square of squares
+//      You're a square!
 //      www.codewars.com
 
 /*  Instructions
@@ -8,10 +8,10 @@ in other words, it is the product of some integer with itself"
 The tests will always use some integral number, so don't worry about that in dynamic typed languages.
 
     Examples
--1  =>  false
- 0  =>  true
-25  =>  true
-26  =>  false
+-1  ==>  false
+ 0  ==>  true
+25  ==>  true
+26  ==>  false
 */
 
 const isSquare = (number) => {
