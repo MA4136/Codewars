@@ -17,9 +17,9 @@ function findNextSquare(number) {
     return Math.sqrt(number) % 1 === 0 ? Math.pow(Math.sqrt(number) + 1, 2) : -1
 }
 
-console.log(findNextSquare(121))
-console.log(findNextSquare(625))
-console.log(findNextSquare(114))
+// console.log(findNextSquare(121))
+// console.log(findNextSquare(625))
+// console.log(findNextSquare(114))
 
 // node "Find the next perfect square"
 
