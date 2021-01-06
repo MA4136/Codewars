@@ -15,12 +15,8 @@ nbDig(11549, 1) ==> 11905
 */
 
 function nbDig(num, dig) {
-    let res = ""
-    for (let count = 0; count <= num; count++) {
-        res += `${count * count} `
-    }
-    const exp = new RegExp(dig, 'g')
-    return res.match(exp).length
+    return Array.from(Array(num + 1), (el, idx) => Math.pow(idx, 2))
+        .join("").match(new RegExp(dig, 'g')).length
 }
 
 // console.log(nbDig(10, 1))
@@ -32,3 +28,4 @@ function nbDig(num, dig) {
 // node "Count the Digit"
 
 // Impressive!
+// You have passed all of the tests! :)
