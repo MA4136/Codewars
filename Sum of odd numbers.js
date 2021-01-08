@@ -11,24 +11,19 @@ Given the triangle of consecutive odd numbers:
 Calculate the row sums of this triangle from the row index (starting at index 1):
 
     Examples
-rowSumOddNumbers(1); ==> 1
-rowSumOddNumbers(2); ==> 8 (3 + 5)
+rowSumOddNumbers(1)  ==> 1
+rowSumOddNumbers(2)  ==> 8 (3 + 5)
+rowSumOddNumbers(42) ==> 74088
 */
 
 function rowSumOddNumbers(n) {
-    let start = n ** 2 - (n - 1)
-    let result = 0
-    let count = 0
-
-    while (count < n) {
-        if (start % 2 !== 0) {
-            result += start
-            count++
-        }
-        start++
-    }
-    return result
+    return Math.pow(n, 3)
 }
 
+// console.log(rowSumOddNumbers(1))
+// console.log(rowSumOddNumbers(42))
 
+// node "Sum of odd numbers"
+
+// Correctamundo!
 // You have passed all of the tests! :)
