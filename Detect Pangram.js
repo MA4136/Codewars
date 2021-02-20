@@ -13,7 +13,7 @@ isPangram('This is not a pangram.') ==> false
 */
 
 function isPangram(string = '') {
-    const alphabet = Array(26).fill(0).map((_, idx) => String.fromCharCode(97 + idx))
+    const alphabet = Array.from({length:26}, (_, idx) => String.fromCharCode(97 + idx))
     const word = string.toLowerCase().match(/[a-z]/g)
     return alphabet.every(char => word.includes(char))
 }

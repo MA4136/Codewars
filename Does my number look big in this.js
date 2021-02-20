@@ -1,4 +1,4 @@
-// Does my number look big in this?
+//      Does my number look big in this?
 //      www.codewars.com
 
 /*      Instructions

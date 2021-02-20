@@ -13,15 +13,13 @@ towerBuilder(3), ["  *  "," *** ","*****"]);
 */
 
 function towerBuilder(nFloors) {
-    return Array(nFloors).fill('')
-        .map((el, idx) =>
+    return Array.from({length: nFloors},
+        (el, idx) =>
             ' '.repeat(nFloors - idx - 1) +
             '*'.repeat(idx * 2 + 1) +
-            ' '.repeat(nFloors - idx - 1))
+            ' '.repeat(nFloors - idx - 1)
+    )
 }
-
-console.log(Array(3))
-console.log(Array.from({length:3}))
 
 console.log(towerBuilder(1))
 console.log(towerBuilder(2))

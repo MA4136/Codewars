@@ -11,7 +11,7 @@ validBraces( "[(])" ) ==> false
 */
 
 function validBraces(braces) {
-    const regExp = new RegExp(/\{\}|\[\]|\(\)/)
+    const regExp = new RegExp(/\{\}|\[\]|\(\)/)//  {} or [] or ()
     return regExp.test(braces) ? validBraces(braces.replace(regExp, '')) : '' === braces
 }
 

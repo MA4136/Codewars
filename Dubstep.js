@@ -2,7 +2,7 @@
 //      www.codewars.com
 
 /*      Instructions
-a long description is available here: https://www.codewars.com/kata/551dc350bf4e526099000ae5
+description is available here: https://www.codewars.com/kata/551dc350bf4e526099000ae5
 
         Examples
 songDecoder("AWUBBWUBC") ==> "A B C"
@@ -11,7 +11,7 @@ songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB") ==> "WE ARE THE
 */
 
 function songDecoder(song) {
-    return song.replace(/WUB/g, " ").trim().replace(/\s+/g, " ")
+    return song.replace(/(WUB)+/g, " ").trim()
 }
 
 console.log(songDecoder("AWUBBWUBC"))
