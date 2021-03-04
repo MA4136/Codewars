@@ -1,21 +1,21 @@
 //      Mumbling
-//      www.codewars.com
 
-/*  Instructions
+/*      Instructions
+description: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039
 This time no story, no theory. The examples below show you how to write function
 
-    Examples
-accum("abcd") -> "A-Bb-Ccc-Dddd"
-accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-accum("cwAt") -> "C-Ww-Aaa-Tttt"
+        Examples
+accum('abcd') ==> 'A-Bb-Ccc-Dddd'
+accum('RqaEzty') ==> 'R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy'
+accum('cwAt') ==> 'C-Ww-Aaa-Tttt'
 */
 
 function accum(string) {
-    let result = []
-    for (let n = 0; n < string.length; n++) {
-        result.push(string[n].toUpperCase() + string[n].repeat(n).toLowerCase())
-    }
-    return result.join('-')
+    return [...string].map((char, idx) => (char.toUpperCase() + char.toLowerCase().repeat(idx))).join('-')
 }
 
-// You have passed all of the tests! :)
+console.log(accum('abcd'))
+console.log(accum('RqaEzty'))
+console.log(accum('cwAt'))
+
+// node "Mumbling"
