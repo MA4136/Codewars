@@ -1,21 +1,23 @@
 //      You're a square!
-//      www.codewars.com
 
-/*  Instructions
-Given an integral number, determine if it's a square number:
-"In mathematics, a square number or perfect square is an integer that is the square of an integer;
-in other words, it is the product of some integer with itself"
-The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+/*      Instructions
+description: https://www.codewars.com/kata/54c27a33fb7da0db0100040e
+Given an integral number, determine if it's a square number
 
-    Examples
--1  ==>  false
- 0  ==>  true
-25  ==>  true
-26  ==>  false
+        Examples
+isSquare(-1) ==> false
+isSquare( 0) ==> true
+isSquare(25) ==> true
+isSquare(26) ==> false
 */
 
-const isSquare = (number) => {
-    return Math.pow(Math.trunc(Math.sqrt(number)), 2) === number
+function isSquare(number) {
+    return Math.sqrt(number) % 1 === 0
 }
 
-// You have passed all of the tests! :)
+console.log(isSquare(-1))
+console.log(isSquare(0))
+console.log(isSquare(25))
+console.log(isSquare(26))
+
+// node "You're a square"
