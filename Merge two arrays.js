@@ -1,23 +1,21 @@
 //      Merge two arrays
-//      www.codewars.com
 
-/*  Instructions
+/*      Instructions
+description: https://www.codewars.com/kata/583af10620dda4da270000c5
 Write a function that combines two arrays by alternatingly taking elements from each array in turn.
-The arrays may be of different lengths, with at least one character/digit.
-One array will be of string characters (in lower case, a-z), a second of integers (all positive starting at 1).
 
-    Examples
-[a, b, c, d, e], [1, 2, 3, 4, 5] ==>  [a, 1, b, 2, c, 3, d, 4, e, 5]
-[1, 2, 3], [a, b, c, d, e, f]    ==>  [1, a, 2, b, 3, c, d, e, f]
+        Examples
+mergeArrays(['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]) ==> ['a', 1, 'b', 2, 'c', 3, 'd', 4, 'e', 5]
+mergeArrays([1, 2, 3, 4, 5, 6, 7, 8], ['a', 'b', 'c', 'd', 'e']) ==> [1, 'a', 2, 'b', 3, 'c', 4, 'd', 5, 'e', 6, 7, 8]
+mergeArrays([2, 5, 8, 23, 67, 6], ['b', 'r', 'a', 'u', 'r', 's']) ==> [2, 'b', 5, 'r', 8, 'a', 23, 'u', 67, 'r', 6, 's']
 */
 
 function mergeArrays(a, b) {
-    let result = []
-    for (let k = 0; k < Math.max(a.length, b.length); k++) {
-        result.push(a[k], b[k])
-    }
-    return result.filter(el => el !== undefined)
+    return a.reduce((acc, curr) => b.length ? [...acc, curr, b.shift()] : [...acc, curr], []).concat(b)
 }
 
-// Outstanding!
-// You have passed all of the tests! :)
+console.log(mergeArrays(['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]))
+console.log(mergeArrays([1, 2, 3, 4, 5, 6, 7, 8], ['a', 'b', 'c', 'd', 'e']))
+console.log(mergeArrays([2, 5, 8, 23, 67, 6], ['b', 'r', 'a', 'u', 'r', 's']))
+
+// node "Merge two arrays"
