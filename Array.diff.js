@@ -1,24 +1,23 @@
 //      Array.diff
-//      www.codewars.com
 
 /*      Instructions
+description: https://www.codewars.com/kata/523f5d21c841566fde000009
 Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
-It should remove all values from list a, which are present in list b.
-If a value is present in b, all of its occurrences must be removed from the other.
+It should remove all values from list a, which are present in list b. If a value is present in b, all of its occurrences must be removed from the other.
 
         Examples
-arrayDiff([1,2,2,2,3], [2]) ==> [1,3]
 arrayDiff([3,4], [3]) ==> [4]
 arrayDiff([1,8,2], []) ==> [1,8,2]
+arrayDiff([1,2,2,2,3], [2]) ==> [1,3]
 */
 
 function arrayDiff(a, b) {
     return a.filter(el => !b.includes(el))
 }
 
-console.log(arrayDiff([1, 2, 2, 2, 3], [2]))
 console.log(arrayDiff([3, 4], [3]))
 console.log(arrayDiff([1, 8, 2], []))
+console.log(arrayDiff([1, 2, 2, 2, 3], [2]))
 
 // node "Array.diff"
 

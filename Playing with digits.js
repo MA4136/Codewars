@@ -1,13 +1,9 @@
 //      Playing with digits
-//      www.codewars.com
 
 /*      Instructions
-full description is available here: https://www.codewars.com/kata/5552101f47fc5178b1000050
-
-In other words:
-"Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k"
-If it is the case we will return k, if not return -1.
-Note: n and p will always be given as strictly positive integers.
+description: https://www.codewars.com/kata/5552101f47fc5178b1000050
+In other words: "Is there an integer k such as : (a ^ p + b ^ (p+1) + c ^(p+2) + d ^ (p+3) + ...) = n * k"
+If it is the case we will return k, if not return -1. Note: n and p will always be given as strictly positive integers.
 
         Examples
 digPow(89, 1) ==> 1

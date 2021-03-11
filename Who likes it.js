@@ -1,7 +1,7 @@
 //      Who likes it?
-//      www.codewars.com
 
 /*      Instructions
+description: https://www.codewars.com/kata/5266876b8f4bf2da9b000362
 Implement a function likes :: [String] -> String, which must take in input array, containing the names of people
 who like an item. It must return the display text as shown in the examples:
 
@@ -30,5 +30,3 @@ console.log(likes(['Max', 'John', 'Mark']))
 console.log(likes(['Alex', 'Jacob', 'Mark', 'Max']))
 
 // node "Who likes it"
-
-// Impressive!

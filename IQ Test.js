@@ -1,7 +1,7 @@
 //      IQ Test
-//      www.codewars.com
 
 /*      Instructions
+description: https://www.codewars.com/kata/552c028c030765286c00007d
 The most frequent task in this test is to find out which one of the given numbers differs from the others in evenness.
 Write a method that among the given numbers finds one that is different in evenness, and return a position of this number.
 

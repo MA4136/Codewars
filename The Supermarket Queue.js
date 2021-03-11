@@ -1,8 +1,7 @@
 //      The Supermarket Queue
-//      www.codewars.com
 
 /*      Instructions
-full description is available here: https://www.codewars.com/kata/57b06f90e298a7b53d000a86
+description: https://www.codewars.com/kata/57b06f90e298a7b53d000a86
 
         Examples
 queueTime([], 1) ==> 0
