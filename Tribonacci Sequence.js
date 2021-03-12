@@ -1,8 +1,7 @@
 //      Tribonacci Sequence
-//      www.codewars.com
 
 /*      Instructions
-full description is available here: https://www.codewars.com/kata/556deca17c58da83c00002db
+description: https://www.codewars.com/kata/556deca17c58da83c00002db
 
         Examples
 tribonacci([1,2,3],10) ==> [1,2,3,6,11,20,37,68,125,230]

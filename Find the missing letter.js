@@ -1,8 +1,7 @@
 //      Find the missing letter
-//      www.codewars.com
 
 /*      Instructions
-full description is available here: https://www.codewars.com/kata/5839edaa6754d6fec10000a2
+description: https://www.codewars.com/kata/5839edaa6754d6fec10000a2
 Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
 
         Examples

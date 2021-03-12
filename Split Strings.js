@@ -1,5 +1,4 @@
 //      Split Strings
-//      www.codewars.com
 
 /*      Instructions
 description: https://www.codewars.com/kata/515de9ae9dcfc28eb6000001
