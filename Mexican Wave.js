@@ -4,10 +4,10 @@
 description: https://www.codewars.com/kata/58f5c63f1e26ecda7e000029
 
         Examples
-wave("") ==> []
-wave(" gap ") ==> [" Gap ", " gAp ", " gaP "]
-wave("hello") ==> ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
-wave("codewars") ==> ["Codewars", "cOdewars", "coDewars", "codEwars", "codeWars", "codewArs", "codewaRs", "codewarS"]
+wave('') ==> []
+wave(' gap ') ==> [' Gap ', ' gAp ', ' gaP ']
+wave('hello') ==> ['Hello', 'hEllo', 'heLlo', 'helLo', 'hellO']
+wave('codewars') ==> ['Codewars', 'cOdewars', 'coDewars', 'codEwars', 'codeWars', 'codewArs', 'codewaRs', 'codewarS']
 */
 
 function wave(str) {

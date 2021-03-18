@@ -1,8 +1,8 @@
 //      Break camelCase
 
 /*      Instructions
-description: https://www.codewars.com/kata/59cfc000aeb2844d16000075
-Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below.
+description: https://www.codewars.com/kata/5208f99aee097e6552000148
+Complete the solution so that the function will break up camel casing, using a space between words.
 
         Examples
 solution('camelCasing') ==> 'camel Casing'
@@ -10,7 +10,7 @@ solution('camelCasingTest') ==> 'camel Casing Test'
 */
 
 function solution(string) {
-    return string.replace(/([a-z])([A-Z])/g, '$1 $2')
+    return string.replace(/([A-Z])/g, ' $1')
 }
 
 console.log(solution('camelCasing'))

@@ -14,6 +14,11 @@ function toWeirdCase(string) {
         .join(' ')
 }
 
+function toWeirdCase(string) {
+    const regExp = new RegExp(/\w{2}/, 'g')
+    string.toUpperCase().replace(regExp, results => results[0] + results[1].toLowerCase())
+}
+
 console.log(toWeirdCase('String'))
 console.log(toWeirdCase('Weird string case'))
 
