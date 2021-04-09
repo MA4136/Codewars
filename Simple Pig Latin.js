@@ -10,10 +10,16 @@ pigIt('Pig latin is cool') ==> 'igPay atinlay siay oolcay'
 pigIt('This is my string') ==> 'hisTay siay ymay tringsay'
 */
 
+// #1
 function pigIt(str) {
     return str.split(' ')
-              .map(el => el.match(/[a-z]+/ig) ? el.slice(1).concat(el[0], 'ay') : el)
-              .join(' ')
+        .map(el => el.match(/[a-z]+/ig) ? el.slice(1).concat(el[0], 'ay') : el)
+        .join(' ')
+}
+
+// #2
+function pigIt(str) {
+    return str.replace(/([a-z])([a-z]*)/gi, `$2$1ay`) // /(\w)(\w*)/g
 }
 
 console.log(pigIt('Hello world !'))

@@ -1,7 +1,7 @@
-// Calculating with Functions
+//      Calculating with Functions
 
 /*      Instructions
-description: codewars.com/kata/525f3eda17c7cd9f9e000b39
+description: https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39
 Write calculations using functions and get the results. Let's have a look at some examples:
 
         Examples

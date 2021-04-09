@@ -8,12 +8,14 @@ toWeirdCase( 'String' ) ==> 'StRiNg'
 toWeirdCase( 'Weird string case' ) ==> 'WeIrD StRiNg CaSe'
 */
 
+// #1
 function toWeirdCase(string) {
     return string.split(' ')
         .map(el => [...el].map((char, idx) => idx % 2 ? char.toLowerCase() : char.toUpperCase()).join(''))
         .join(' ')
 }
 
+// #2
 function toWeirdCase(string) {
     const regExp = new RegExp(/\w{2}/, 'g')
     string.toUpperCase().replace(regExp, results => results[0] + results[1].toLowerCase())
