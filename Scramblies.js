@@ -15,12 +15,13 @@ scramble('scriptingjava','javascript') ==> true
 scramble('cedewaraaossoqqyt','codewars') ==> true
 */
 
-//  #1
+// #1
 // STDERR: Execution Timed Out (12000 ms)
 function scramble(str1, str2) {
     return [...str2].every(el => str1.includes(el) && (str1 = str1.replace(el, '*')) && str1.length >= 0)
 }
-//  #2
+
+// #2
 function scramble(str1, str2) {
     const characters = [...str1].reduce((acc, curr) => {
         (acc[curr]++) || (acc[curr] = 1)
@@ -29,6 +30,10 @@ function scramble(str1, str2) {
     return [...str2].every(el => --characters[el] >= 0)
 }
 
+// #3
+function scramble(str1, str2) {
+    return [...str2].every(el => str2.split(el).length <= str1.split(el).length)
+}
 
 console.log(scramble('katas', 'steak'))
 console.log(scramble('rkqodlw', 'world'))
