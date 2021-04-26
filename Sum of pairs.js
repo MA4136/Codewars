@@ -2,7 +2,7 @@
 
 /*      Instructions
 description: https://www.codewars.com/kata/54d81488b981293527000c8f
-Given a list of integers and a single sum value, return the first two values (parse from the left please) in order of appearance that add up to form the sum.
+Given a list of integers and a single sum value, return the first two values in order of appearance that add up to form the sum.
 
         Examples
 sumPairs([0, 2, 0], 0)              ==> [0, 0]
@@ -15,13 +15,16 @@ sumPairs([10, 5, 2, 3, 7, 5], 10)   ==> [3, 7]
 sumPairs([1, -2, 3, 0, -6, 1], -6)  ==> [0, -6]
 */
 
+// #1
+// STDERR: Execution Timed Out (12000 ms)
 function sumPairs(array, sum) {
     return array
         .map((A, idxA) => array.slice(idxA).map((B, idxB) => (A + B) === sum && idxB !== idxA && [A, B]).filter(Boolean))
         .filter(el => el.length === 1)
-        .flat()[0]    // STDERR: Execution Timed Out (12000 ms) :)
+        .flat()[0]
 }
 
+// #2
 function sumPairs(array, sum) {
     let curr = 0
 
@@ -34,7 +37,6 @@ function sumPairs(array, sum) {
         if (sumIndex !== -1) return [sliced[sumIndex], array[i]]
     }
 }
-
 
 console.log(sumPairs([0, 2, 0], 0))
 console.log(sumPairs([20, -13, 40], -7))

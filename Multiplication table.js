@@ -1,8 +1,8 @@
-// Multiplication table
+//      Multiplication table
 
 /*      Instructions
-description: https://www.codewars.com/kata/59cfc000aeb2844d16000075
-Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below.
+description: https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08
+Your task, is to create NxN multiplication table, of size provided in parameter.
 
         Examples
 multiplicationTable(3) ===> [ [ 1, 2, 3 ], [ 2, 4, 6 ], [ 3, 6, 9 ] ]

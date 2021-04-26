@@ -23,6 +23,15 @@ function sqInRect(lng, wdth) {
     return result
 }
 
+// #2
+function sqInRect(lng, wdth, flag = true) {
+    if (lng === wdth) return flag ? null : [lng]
+    const min = Math.min(lng, wdth)
+    const max = Math.max(lng, wdth)
+
+    return [min, ...sqInRect(max - min, min, false)]
+}
+
 console.log(sqInRect(5, 5))
 console.log(sqInRect(5, 3))
 console.log(sqInRect(3, 5))
