@@ -11,9 +11,15 @@ Write simple .camelCase method for strings. All words must have their first lett
 'camel case method'.camelCase() ==> 'CamelCaseMethod'
 */
 
+// #1
 String.prototype.camelCase = function () {
     const regExp = new RegExp(/^.|\s./, 'g')
     return this ? this.trim().replace(regExp, (result) => result.toUpperCase().trim()) : ''
+}
+
+// #2
+String.prototype.camelCase = function () {
+    return this.split(' ').map(el => el.slice(0, 1).toUpperCase() + el.slice(1)).join('')
 }
 
 console.log(''.camelCase(), '')
