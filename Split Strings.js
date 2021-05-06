@@ -11,10 +11,16 @@ solution('abc') ==> ['ab', 'c_']
 solution('abcdef') ==> ['ab', 'cd', 'ef']
 */
 
+// #1
 function solution(str) {
     if (str.length === 0) return []
     const matches = str.match(/.{2}/gi)
     return str.length % 2 ? [...matches, str[str.length - 1] + '_'] : matches
+}
+
+// #2
+function solution(str) {
+    return (str + '_').match(/../g) || []
 }
 
 console.log(solution(''))
