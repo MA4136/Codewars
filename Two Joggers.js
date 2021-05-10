@@ -9,16 +9,23 @@ nbrOfLaps(4, 6) ==> [3,2]
 nbrOfLaps(5, 5) ==> [1,1]
 */
 
+// #1
 function nbrOfLaps(x, y) {
     let multiple = x
     while (multiple % y !== 0) {
         multiple += x
     }
-    return [multiple / x, multiple / y]
+    return [ multiple / x, multiple / y ]
 }
 
-console.log(nbrOfLaps(5, 3), [3, 5])
-console.log(nbrOfLaps(4, 6), [3, 2])
-console.log(nbrOfLaps(5, 5), [1, 1])
+// #2
+function nbrOfLaps(x, y, lap = 1) {
+    while (x * lap % y) lap++
+    return [ lap, x * lap / y ]
+}
+
+console.log(nbrOfLaps(5, 3), [ 3, 5 ])
+console.log(nbrOfLaps(4, 6), [ 3, 2 ])
+console.log(nbrOfLaps(5, 5), [ 1, 1 ])
 
 // node "Two Joggers"
