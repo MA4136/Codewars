@@ -10,13 +10,19 @@ count('') ==> {}
 count('aba') ==> { a: 2, b: 1 }
 */
 
+// #1
 function count(string) {
     let result = {}
     string.split('').map(el => result[el] = result[el] + 1 || 1)
     return result
 }
 
+// #2
+function count(string) {
+    [ ...string ].reduce((pre, val) => (pre[val] = -~pre[val], pre), {})
+}
+
 console.log(count(''), {})
-console.log(count('aba'), {a: 2, b: 1})
+console.log(count('aba'), { a: 2, b: 1 })
 
 // node "Count characters in your string"
