@@ -11,10 +11,16 @@ cleanString('gfh#jds###d#dsd####dasdaskhj###dhkjs####df##s##d##') ==> 'gdasda'
 cleanString('831####jns###s#cas/*####-5##s##6+yqw87e##hfklsd-=-28##fds##') ==> '6+yqw8hfklsd-=-f'
 */
 
+// #1
 function cleanString(string) {
     const result = []
     Array.from(string, (el => (el === '#' ? result.pop() : result.push(el))))
     return result.join('')
+}
+
+// #2
+function cleanString(string) {
+    return [...string].reduce((acc, curr) => curr === '#' ? acc.slice(0, -1) : acc + curr, '')
 }
 
 console.log(cleanString('######831###dhkj####jd#dsfsdnjkf###d####dasns'), 'jdsfdasns')
