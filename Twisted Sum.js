@@ -11,10 +11,18 @@ twistedSum(11) ==> 48
 twistedSum(12) ==> 51
 */
 
+// #1
 function twistedSum(n) {
     return Array.from({length: n}, (_, idx) => idx + 1)
         .map(el => String(el).length > 1 && [...String(el)].reduce((n, m) => Number(n) + Number(m), 0) || el)
         .reduce((n, m) => Number(n) + Number(m), 0)
+}
+
+// #2
+function twistedSum(n) {
+    return [...Array(++n)].reduce((acc, curr, idx) => acc + ((idx + '')
+        .split('')
+        .reduce((n, m) => Number(n) + Number(m), 0)), 0)
 }
 
 console.log(twistedSum(3), 6)
