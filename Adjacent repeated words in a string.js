@@ -19,6 +19,14 @@ function countAdjacentPairs(string) {
     return result && result.length || 0
 }
 
+// #2
+function countAdjacentPairs(string) {
+    return string.split(' ')
+        .map(el => el.toLowerCase())
+        .reduce((acc, curr, _, array) => acc.includes(curr) ? acc : array.indexOf(curr) === array.lastIndexOf(curr) ? acc : acc.concat(curr), [])
+        .length
+}
+
 console.log(countAdjacentPairs(''))
 console.log(countAdjacentPairs('pineapple apple'))
 console.log(countAdjacentPairs('banana banana banana'))
