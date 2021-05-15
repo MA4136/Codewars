@@ -10,11 +10,22 @@ expandedForm(42) ==> '40 + 2'
 expandedForm(70304) ==> '70000 + 300 + 4'
 */
 
+// #1
 function expandedForm(num) {
     return [...String(num)]
         .map((el, idx, array) => el + '0'.repeat((array.length - idx) - 1))
         .filter(el => Number(el) !== 0)
         .join(' + ')
+}
+
+// #2
+function expandedForm(num) {
+    return [...String(num)]
+        .reverse()
+        .map((el, idx) => el * 10 ** idx)
+        .reverse()
+        .filter(Boolean)
+        .join(` + `)
 }
 
 console.log(expandedForm(12))
