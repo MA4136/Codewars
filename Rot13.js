@@ -10,10 +10,18 @@ rot13('test') ==> 'grfg'
 rot13('Test') ==> 'Grfg'
 */
 
+// #1
 function rot13(message) {
     return message.replace(/[a-z]/gi, el => {
         return 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.charAt(
                'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'.indexOf(el))
+    })
+}
+
+// #2
+function rot13(message) {
+    return message.replace(/[a-z]/gi, el => {
+        return String.fromCharCode(el.charCodeAt(0) + (el.toUpperCase() <= 'M' ? 13 : -13))
     })
 }
 
