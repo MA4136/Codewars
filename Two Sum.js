@@ -6,11 +6,12 @@ Write a function that takes an array of numbers and a target number. It should f
 when added together, give the target value. The indices of these items should then be returned in a array like so: (index1, index2).
 
         Examples
-twoSum([2,2,3], 4) ==> [0,1]
-twoSum([1,2,3], 4) ==> [0,2]
-twoSum([1234,5678,9012], 14690) ==> [1,2]
+twoSum([2, 2, 3], 4) ==> [0, 1]
+twoSum([1, 2, 3], 4) ==> [0, 2]
+twoSum([1234, 5678, 9012], 14690) ==> [1, 2]
 */
 
+// #1
 function twoSum(numbers, target) {
     for (let n = 0; n < numbers.length - 1; n++) {
         for (let m = n + 1; m < numbers.length; m++) {
@@ -19,6 +20,12 @@ function twoSum(numbers, target) {
             }
         }
     }
+}
+
+// #2
+function twoSum(arr, sum, a = 0, b = 1) {
+    if (b === arr.length) return twoSum(arr, sum, ++a, 0)
+    return arr[a] + arr[b] === sum ? [a, b] : twoSum(arr, sum, a, ++b)
 }
 
 console.log(twoSum([2, 2, 3], 4))
