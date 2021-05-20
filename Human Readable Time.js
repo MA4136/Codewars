@@ -12,6 +12,7 @@ humanReadable(86399) ==> '23:59:59'
 humanReadable(359999) ==> '99:59:59'
 */
 
+// #1
 function humanReadable(seconds) {
     let HH = Math.trunc(seconds / 3600)
     let MM = Math.trunc((seconds % 3600) / 60)
@@ -26,6 +27,11 @@ function humanReadable(seconds) {
     SS = concatZero(SS)
 
     return `${HH}:${MM}:${SS}`
+}
+
+// #2
+function humanReadable(seconds) {
+    return [(seconds / 3600) | 0, seconds % 3600 / 60, seconds % 3600 % 60].map(n => ('0' + ('' + n | 0)).substr(-2)).join(':')
 }
 
 console.log(humanReadable(0))
