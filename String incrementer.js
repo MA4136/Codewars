@@ -15,6 +15,7 @@ incrementString('foobar000') ==> 'foobar001'
 incrementString('foobar001') ==> 'foobar002'
 */
 
+// #1
 function incrementString(string) {
     const regExp = new RegExp(/(0*)([0-9]+$)/)
 
@@ -22,6 +23,11 @@ function incrementString(string) {
         let incr = Number(num) + 1
         return String(incr).length > num.length ? zeros.slice(0, -1) + incr : zeros + incr
     }) : string + 1
+}
+
+// #2
+function incrementString(string) {
+    return string.replace(/[0-8]?9*$/, el => ++el)
 }
 
 console.log(incrementString(''))
