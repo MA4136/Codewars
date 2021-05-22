@@ -13,6 +13,7 @@ productFib(84049690), [10946, 17711, false])
 productFib(193864606), [10946, 17711, true])
 */
 
+// #1
 function productFib(prod) {
     let first = 0
     let second = 1
@@ -22,6 +23,11 @@ function productFib(prod) {
     }
 
     return [first, second, first * second === prod]
+}
+
+// #2
+function productFib(prod, n = 0, n1 = 1) {
+    return n * n1 >= prod ? [n, n1, n * n1 === prod] : productFib(prod, n1, n + n1)
 }
 
 console.log(productFib(4895))
