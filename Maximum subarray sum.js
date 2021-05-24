@@ -10,6 +10,7 @@ maxSequence([-200, 119, 53, 80, -38, -95, 14, -88, 42])) ==> 252
 maxSequence([941, 1547, 5, -4451, -659, 2995, -181, 4775, -3841])) ==> 7589
 */
 
+// #1
 function maxSequence(array) {
     let max = 0
     let current = 0
@@ -21,6 +22,11 @@ function maxSequence(array) {
     }
 
     return max
+}
+
+// #2
+function maxSequence(array) {
+    return Math.max(0, ...array.reduce((acc, curr) => [Math.max(acc[0] + curr || curr, curr), ...acc], []))
 }
 
 console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
