@@ -11,13 +11,19 @@ alphabetPosition('The narwhal bacons at midnight.') ==> '20 8 5 14 1 18 23 8 1 1
 alphabetPosition('The sunset sets at twelve o' clock.') ==> '20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11'
 */
 
+// #1
 function alphabetPosition(text) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'
     return Array.from(text.replace(/[^a-z]/gi, '').toLowerCase(), el => alphabet.indexOf(el) + 1).join(' ')
 }
 
+// #2
+function alphabetPosition(text) {
+    return text.toUpperCase().replace(/[^a-z]/gi, '').split('').map(el => el.charCodeAt(0) - 64).join(' ')
+}
+
 console.log(alphabetPosition('(=+| #}]'))
 console.log(alphabetPosition('The narwhal bacons at midnight.'))
-console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+console.log(alphabetPosition('The sunset sets at twelve o\' clock.'))
 
 // node "Replace With Alphabet Position"
