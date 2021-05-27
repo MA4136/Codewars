@@ -22,6 +22,11 @@ function pigIt(str) {
     return str.replace(/([a-z])([a-z]*)/gi, `$2$1ay`) // /(\w)(\w*)/g
 }
 
+// #3
+function pigIt(str) {
+    return str.split(' ').map(el => `${el.substr(1)}${el[0]}ay`).join(' ')
+}
+
 console.log(pigIt('Hello world !'))
 console.log(pigIt('Pig latin is cool'))
 console.log(pigIt('This is my string'))
