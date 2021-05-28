@@ -24,7 +24,7 @@ function pigIt(str) {
 
 // #3
 function pigIt(str) {
-    return str.split(' ').map(el => `${el.substr(1)}${el[0]}ay`).join(' ')
+    return str.replace(/\w+/g, match => match.slice(1) + match.charAt(0) + 'ay')
 }
 
 console.log(pigIt('Hello world !'))
