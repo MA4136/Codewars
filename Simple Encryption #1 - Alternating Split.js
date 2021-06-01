@@ -16,6 +16,7 @@ decrypt(' Tah itse sits!', 3) ==> 'This is a test!'
 decrypt('This is a test!', -1) ==> 'This is a test!'
 */
 
+// #1
 function encrypt(text, n) {
     if (!text || !n || n < 0) return text
 
@@ -34,6 +35,24 @@ function decrypt(encryptedText, n) {
     const string = [...second].map((_, idx) => second[idx].concat(first[idx] ? first[idx] : '')).join('')
 
     return n > 1 ? decrypt(string, (n - 1)) : string
+}
+
+// #2
+function encrypt(text, n) {
+    for (let i = 0; i < n; i++) {
+        text = text && text.replace(/.(.|$)/g, '$1') + text.replace(/(.)./g, '$1')
+    }
+
+    return text
+}
+
+function decrypt(encryptedText, n) {
+    const length = encryptedText && encryptedText.length / 2 | 0
+    for (let i = 0; i < n; i++) {
+        encryptedText = encryptedText.slice(length).replace(/./g, (_, i) => _ + (i < length ? encryptedText[i] : ''))
+    }
+
+    return encryptedText
 }
 
 console.log(encrypt('This is a test!', 0))
