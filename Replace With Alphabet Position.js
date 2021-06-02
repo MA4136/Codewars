@@ -22,6 +22,12 @@ function alphabetPosition(text) {
     return text.toUpperCase().replace(/[^a-z]/gi, '').split('').map(el => el.charCodeAt(0) - 64).join(' ')
 }
 
+// #3
+function alphabetPosition(text) {
+    const results = text.match(/[a-z]/gi)
+    return results && results.map((el) => el.toLowerCase().charCodeAt() - 96).join(' ') || ''
+}
+
 console.log(alphabetPosition('(=+| #}]'))
 console.log(alphabetPosition('The narwhal bacons at midnight.'))
 console.log(alphabetPosition('The sunset sets at twelve o\' clock.'))
