@@ -29,6 +29,11 @@ function maxSequence(array) {
     return Math.max(0, ...array.reduce((acc, curr) => [Math.max(acc[0] + curr || curr, curr), ...acc], []))
 }
 
+// #3
+function maxSequence(array, sum = 0) {
+    return array.reduce((acc, curr) => Math.max(sum = Math.max(sum + curr, 0), acc), 0)
+}
+
 console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
 console.log(maxSequence([-200, 119, 53, 80, -38, -95, 14, -88, 42]))
 console.log(maxSequence([941, 1547, 5, -4451, -659, 2995, -181, 4775, -3841]))
