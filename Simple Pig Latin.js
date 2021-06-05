@@ -27,6 +27,11 @@ function pigIt(str) {
     return str.replace(/\w+/g, match => match.slice(1) + match.charAt(0) + 'ay')
 }
 
+// #4
+function pigIt(str) {
+    return str.replace(/\b(\w)(\w*)\b/gi, '$2$1ay')
+}
+
 console.log(pigIt('Hello world !'))
 console.log(pigIt('Pig latin is cool'))
 console.log(pigIt('This is my string'))
