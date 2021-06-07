@@ -26,6 +26,13 @@ function productFib(prod) {
 }
 
 // #2
+function productFib(prod) {
+    let [a, b] = [0, 1]
+    while (a * b < prod) [a, b] = [b, a + b]
+    return [a, b, a * b === prod]
+}
+
+// #3
 function productFib(prod, n = 0, n1 = 1) {
     return n * n1 >= prod ? [n, n1, n * n1 === prod] : productFib(prod, n1, n + n1)
 }
