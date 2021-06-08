@@ -34,6 +34,11 @@ function humanReadable(seconds) {
     return [(seconds / 3600) | 0, seconds % 3600 / 60, seconds % 3600 % 60].map(el => ('0' + ('' + el | 0)).substr(-2)).join(':')
 }
 
+// #3
+function humanReadable(seconds) {
+    return [seconds / 3600 ^ 0, seconds / 60 % 60 ^ 0, seconds % 60].map(el => `${el}`.padStart(2, `0`)).join(`:`)
+}
+
 console.log(humanReadable(0))
 console.log(humanReadable(5))
 console.log(humanReadable(60))
