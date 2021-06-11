@@ -15,6 +15,11 @@ function camelize(str) {
     return str.split(regExp).filter(Boolean).map(el => el[0].toUpperCase() + el.slice(1).toLowerCase()).join('')
 }
 
+// #2
+function camelize(str) {
+    return str.toLowerCase().split(/[^a-z\d]/gi).reduce((acc, curr) => acc + (curr && (curr[0].toUpperCase() + curr.slice(1))), ``)
+}
+
 console.log(camelize('H qi,'))
 console.log(camelize('XB006'))
 console.log(camelize('testing ABC'))
