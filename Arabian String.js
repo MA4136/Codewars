@@ -20,6 +20,11 @@ function camelize(str) {
     return str.toLowerCase().split(/[^a-z\d]/gi).reduce((acc, curr) => acc + (curr && (curr[0].toUpperCase() + curr.slice(1))), ``)
 }
 
+// #3
+function camelize(str) {
+    return str.split(/[^a-z\d]/gi).map(el => el.toLowerCase()).map(el => el.charAt(0).toUpperCase() + el.slice(1)).join('')
+}
+
 console.log(camelize('H qi,'))
 console.log(camelize('XB006'))
 console.log(camelize('testing ABC'))
