@@ -10,8 +10,14 @@ findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]) ==> 5
 findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]) ==> 5
 */
 
+// #1
 function findOdd(array) {
     return array.find((_, idx) => array.filter(el => el === array[idx]).length % 2 !== 0)
+}
+
+// #2
+function findOdd(array) {
+    return array.reduce((acc, curr) => acc ^ curr)
 }
 
 console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]))
