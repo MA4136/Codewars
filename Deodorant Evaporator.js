@@ -11,6 +11,7 @@ The program reports the nth day (as an integer) on which the evaporator will be 
 evaporator(10, 10, 10) ==> 22
 */
 
+// #1
 function evaporator(_, evap_per_day, threshold) {
     let days = 0
     let percentages = 100
@@ -19,6 +20,13 @@ function evaporator(_, evap_per_day, threshold) {
         days++
     }
     return days
+}
+
+// #2
+function evaporator(_, evap_per_day, threshold) {
+    evap_per_day = evap_per_day / 100
+    threshold = threshold / 100
+    return Math.ceil(Math.log(threshold) / Math.log(1 - evap_per_day))
 }
 
 console.log(evaporator(10, 10, 10), 22)

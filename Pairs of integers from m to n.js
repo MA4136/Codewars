@@ -10,6 +10,7 @@ generatePairs(0, 0) ==> [ [ 0, 0 ] ]
 generatePairs(9, 1) ==> []
 */
 
+// #1
 function generatePairs(m, n) {
     const pairs = []
     for (let i = m; i <= n; ++i) {
@@ -18,6 +19,12 @@ function generatePairs(m, n) {
         }
     }
     return pairs
+}
+
+// #2
+function generatePairs(m, n) {
+    return m > n ? [] : Array.from({length: n - m + 1}, (_, i) => [m, m + i])
+        .concat(generatePairs(m + 1, n))
 }
 
 console.log(generatePairs(2, 4))
