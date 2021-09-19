@@ -29,7 +29,7 @@ function loopArr(arr, direction, steps) {
 // #2
 function loopArr(arr, direction, steps) {
     const count = direction == 'left' ? steps : -steps
-    return arr.slice(count).concat(arr.slice(0, count))
+    return [...arr.slice(count), ...arr.slice(0, count)]
 }
 
 console.log(loopArr([1, 5, 87, 45, 8, 8], 'left', 2), [87, 45, 8, 8, 1, 5])
