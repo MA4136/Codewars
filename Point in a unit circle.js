@@ -14,7 +14,6 @@ pointInCircle(0.5,0.5) ==> true
 pointInCircle(1,0) ==> false
 */
 
-
 function pointInCircle(x, y) {
     return Math.pow(x, 2) + Math.pow(y, 2) < 1
 }
