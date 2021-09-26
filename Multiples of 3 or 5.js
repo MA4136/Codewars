@@ -11,12 +11,14 @@ solution(128) ==> 3794
 solution(200) ==> 9168
 */
 
+// #1
 function solution(number) {
     return number <= 0 ? 0 : Array.from(Array(number).keys())
         .filter((_, idx) => idx % 3 === 0 || idx % 5 === 0)
         .reduce((a, b) => a + b)
 }
 
+// #2
 function solution(number) {
     return number <= 0 ? 0 : Array.from({length: number}, (_, idx) => (idx % 3 === 0 || idx % 5 === 0) ? idx : 0)
         .reduce((a, b) => a + b)

@@ -9,6 +9,7 @@ halvingSum(25) ==> 47
 halvingSum(127) ==> 247
 */
 
+// #1
 function halvingSum(number) {
     let result = number
     while (number > 0) {
@@ -16,6 +17,12 @@ function halvingSum(number) {
         result += number
     }
     return result
+}
+
+// #2
+function halvingSum(number) {
+    if (number === 1) return number
+    return number + halvingSum(Math.floor(number / 2))
 }
 
 console.log(halvingSum(25), 47)
