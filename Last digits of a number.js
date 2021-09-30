@@ -14,10 +14,16 @@ lastDigit(123767,4) ==> [3,7,6,7]
 lastDigit(34625647867585,10) ==> [5,6,4,7,8,6,7,5,8,5]
 */
 
+// #1
 function lastDigit(number, digits) {
     if (digits <= 0) return []
     if (digits > String(number).length) return [...String(number)].map(Number)
     return [...String(number)].slice(-digits).map(Number)
+}
+
+// #2
+function lastDigit(number, digits) {
+    return (number + '').split('').splice(-digits, digits).map(Number)
 }
 
 console.log(lastDigit(0, 1), [0])
