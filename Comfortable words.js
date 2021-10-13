@@ -11,9 +11,15 @@ comfortable_word('yams') ==> true
 comfortable_word('test') ==> false
 */
 
+// #1
 function comfortable_word(word) {
     const regExp = new RegExp(/\w{2}|\s{2}/)
     return !regExp.test(word.replace(/[yuiophjklnm]/g, ' '))
+}
+
+// #2
+function comfortable_word(word) {
+    return [...word].map(el => 'yuiophjklnm'.includes(el)).every((el, idx, arr) => el !== arr[idx - 1])
 }
 
 console.log(comfortable_word('yams'))
