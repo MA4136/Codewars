@@ -15,8 +15,14 @@ removeChars("that's a pie$ce o_f p#ie!") ==> 'thats a piece of pie'
 removeChars("0123456789(.)+,|[]{}=@/~;^$'<>?-!*&:#%_") ==> '' (empty string)
 */
 
+// #1
 function removeChars(string) {
     return string.replace(/[^a-z\s]/gi, '')
+}
+
+// #2
+function removeChars(string) {
+    return [...string].filter(el => el === ' ' || el.toLowerCase() !== el.toUpperCase()).join('')
 }
 
 console.log(removeChars('.tree1'))
