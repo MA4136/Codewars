@@ -38,7 +38,6 @@ function majority(array) {
     return major
 }
 
-console.dir('====================================')
 console.dir(majority(['A', 'B', 'A']), 'A')
 console.dir(majority(['A', 'B', 'C']), null)
 console.dir(majority(['A', 'B', 'B', 'A']), null)
