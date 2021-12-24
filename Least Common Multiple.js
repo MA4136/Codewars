@@ -11,6 +11,7 @@ lcm(2, 5) ==> 10
 lcm(2, 3, 4) ==> 12
 */
 
+// #1
 // STDERR - Execution Timed Out (12000 ms)
 function lcm(...args) {
     let max = Math.max(...args)
@@ -21,6 +22,7 @@ function lcm(...args) {
     }
 }
 
+// #2
 function lcm(...args) {
     let max = args[0]
     for (let n = 1; n < args.length; n++) {
@@ -32,6 +34,15 @@ function lcm(...args) {
         max = acc * args[n] / (max + curr)
     }
     return max
+}
+
+// #3
+function gcd(...numbers) {
+    return numbers.reduce((a, b) => b === 0 ? a : gcd(b, a % b))
+}
+
+function lcm(...numbers) {
+    return numbers.reduce((a, b) => Math.abs(a * b) / gcd(a, b))
 }
 
 console.log(lcm(9))

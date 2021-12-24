@@ -12,16 +12,16 @@ Should return a unique, sorted array of all primes in the range [start, finish] 
 Note that this range can go both ways - e.g. getPrimes(10, 1) should return all primes from 1 to 10 both inclusive.
 
         Examples
-isPrime(0), false);
-isPrime(1), false);
-isPrime(2), true);
-isPrime(3), true);
-isPrime(4), false);
-isPrime(5), true);
+isPrime(0) ==> false
+isPrime(1) ==> false
+isPrime(2) ==> true
+isPrime(3) ==> true
+isPrime(4) ==> false
+isPrime(5) ==> true
 
-getPrimes(0, 0).join(), '');
-getPrimes(0, 30).join(), '2,3,5,7,11,13,17,19,23,29');
-getPrimes(30, 0).join(), '2,3,5,7,11,13,17,19,23,29');
+getPrimes(0, 0).join() ==> ''
+getPrimes(0, 30).join() ==> '2,3,5,7,11,13,17,19,23,29'
+getPrimes(30, 0).join() ==> '2,3,5,7,11,13,17,19,23,29'
 */
 
 function isPrime(num) {
@@ -34,9 +34,9 @@ function isPrime(num) {
 
 function getPrimes(num1, num2) {
     let [start, end] = [num1, num2].sort((n, m) => n - m)
-    let primes = [...Array.from({length: ++end}).keys()]
+    let primes = [...Array(++end).keys()]
 
-    return primes.slice(start).filter(el => isPrime(el))
+    return primes.slice(start).filter(isPrime)
 }
 
 console.log(isPrime(0), false)
