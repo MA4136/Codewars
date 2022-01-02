@@ -15,6 +15,7 @@ parse("iiisdoso") ==> [8, 64]
 parse("iiisxxxdoso") ==> [8, 64]
 */
 
+// #1
 function parse(string) {
     let result = []
     let num = 0
@@ -34,6 +35,19 @@ function parse(string) {
                 break
         }
     }
+    return result
+}
+
+// #2
+function parse(string) {
+    let result = []
+    string.split('').reduce((acc, curr) => {
+        if (curr === 'i') acc++
+        if (curr === 'd') acc--
+        if (curr === 's') acc = Math.pow(acc, 2)
+        if (curr === 'o') result.push(acc)
+        return acc
+    }, 0)
     return result
 }
 
