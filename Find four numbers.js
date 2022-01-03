@@ -13,6 +13,7 @@ find4Number(110) ==> [9,4,3,2]
 find4Number(211) ==> [13, 5, 4, 1]
 */
 
+// #1
 function find4Number(number) {
     for (let n = Math.floor(Math.sqrt(number)); n > 0; n--)
         for (let m = Math.floor(Math.sqrt(number - n * n)); m > 0; m--)
@@ -22,6 +23,16 @@ function find4Number(number) {
                 if (p > 0 && p * p === l)
                     return [n, m, k, p]
             }
+}
+
+// #2
+function find4Number(number, numbers = 4) {
+    if (numbers === 0) return number ? null : []
+
+    for (let n = Math.floor(number ** 0.5); n >= 1; n--) {
+        let m = find4Number(number - n ** 2, numbers - 1)
+        if (m) return [n].concat(m)
+    }
 }
 
 console.log(find4Number(16), [2, 2, 2, 2])
