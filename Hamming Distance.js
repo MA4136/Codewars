@@ -16,15 +16,19 @@ hamming('a man a plan a canal', 'a man a plan sobanal') ==> 3)
 hamming('old father, old artificer', 'of my soul the uncreated ') ==> 24)
 */
 
+// #1
 function hamming(str1, str2) {
     if (str1 === str2) return 0
     let counter = 0
-    for (let idx in str1) {
-        if (str1[idx] !== str2[idx]) {
-            counter++
-        }
+    for (let idx = 0; idx < str1.length; idx++) {
+        if (str1[idx] !== str2[idx]) counter++
     }
     return counter
+}
+
+// #2
+function hamming(str1, str2) {
+    return [...str1].filter((_, idx) => str1[idx] !== str2[idx]).length
 }
 
 console.log(hamming('espresso', 'Expresso'), 2)
