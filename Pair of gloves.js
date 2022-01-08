@@ -16,7 +16,7 @@ numberOfPairs(['gray','black','purple','purple','gray','black']) ==> 3
 function numberOfPairs(gloves) {
     let pairs = {}
     for (let el of gloves) {
-        pairs[el] = pairs[el] ? ++pairs[el] : 1
+        pairs[el] = (pairs[el] || 0) + 1
     }
     return Object.values(pairs).map(el => Math.floor(el / 2)).reduce((n, m) => n + m)
 }

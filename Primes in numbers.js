@@ -18,7 +18,7 @@ function primeFactors(num) {
     for (let n = 2; num > 1; n++) {
         if (num % n === 0) {
             while (num % n === 0) {
-                primes[n] = primes[n] ? ++primes[n] : 1
+                primes[n] = (primes[n] || 0) + 1
                 num /= n
             }
         }
@@ -28,10 +28,10 @@ function primeFactors(num) {
         .join('')
 }
 
-console.log(primeFactors(137) === '(137)')
-console.log(primeFactors(72284) === '(2**2)(17)(1063)')
-console.log(primeFactors(86240) === '(2**5)(5)(7**2)(11)')
-console.log(primeFactors(7966684) === '(2**2)(11)(181061)')
-console.log(primeFactors(7775460) === '(2**2)(3**3)(5)(7)(11**2)(17)')
+console.log(primeFactors(137), '(137)')
+console.log(primeFactors(72284), '(2**2)(17)(1063)')
+console.log(primeFactors(86240), '(2**5)(5)(7**2)(11)')
+console.log(primeFactors(7966684), '(2**2)(11)(181061)')
+console.log(primeFactors(7775460), '(2**2)(3**3)(5)(7)(11**2)(17)')
 
 // node "Primes in numbers"
