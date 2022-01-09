@@ -22,6 +22,7 @@ josephus(["C","o","d","e","W","a","r","s"],4) ==> ['e', 's', 'W', 'o', 'C', 'd',
 
 */
 
+// #1
 function josephus(items, k) {
     let result = []
     let pos = 0
@@ -30,6 +31,11 @@ function josephus(items, k) {
         result.push(...items.splice(pos, 1))
     }
     return result
+}
+
+// #2
+function josephus(items, k, pos = 0) {
+    return [...items].map(_ => items.splice(pos = (pos + k - 1) % items.length, 1)[0])
 }
 
 console.log(josephus([], 3), [])
