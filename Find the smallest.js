@@ -7,8 +7,8 @@ remove this digit at that index and insert it back to another or at the same pla
 
 Return an array or a tuple or a string depending on the language (see "Sample Tests") with:
 1)the smallest number you got
-2)the index i of the digit d you took, i as small as possible
-3)the index j (as small as possible) where you insert this digit d to have the smallest number.
+2)the index n of the digit d you took, n as small as possible
+3)the index m (as small as possible) where you insert this digit d to have the smallest number.
 
         Examples
 smallest(261235) ==> [126235, 2, 0]
@@ -23,10 +23,12 @@ function smallest(number) {
     let smallest = number
     let indexFrom = 0
     let indexTo = 0
-    const array = Array.from(String(number), (el) => Number(el))
+    const array = Array.from(String(number), Number)
 
     for (let n = 0; n < array.length; ++n) {
         for (let m = 0; m < array.length; ++m) {
+            if (n === m) continue
+
             let arrCopy = [...array]
             arrCopy.splice(n, 1)
             arrCopy.splice(m, 0, array[n])

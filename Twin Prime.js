@@ -23,7 +23,7 @@ function isPrime(num) {
 }
 
 function isTwinPrime(number) {
-    return isPrime(number) ? isPrime(number + 2) || isPrime(number - 2) : false
+    return isPrime(number) && (isPrime(number + 2) || isPrime(number - 2))
 }
 
 console.log(isTwinPrime(5), true)
