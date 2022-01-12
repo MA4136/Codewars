@@ -22,12 +22,22 @@ off(4) ==> [1, 4]
 off(9) ==> [1, 4, 9]
 */
 
+// #1
 function off(num) {
     let result = []
     let nth = 1
     for (let n = 1; n <= num; n += nth) {
         result.push(n)
         nth += 2
+    }
+    return result
+}
+
+// #2
+function off(num) {
+    let result = []
+    for (let n = 1; n <= num; n++) {
+        if (Math.sqrt(n) % 1 === 0) result.push(n)
     }
     return result
 }
