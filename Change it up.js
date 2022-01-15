@@ -18,20 +18,32 @@ changer('sponge1') ==> 'tqpOhf1'
 changer('Hello World') ==> 'Ifmmp xpsmE'
 */
 
+// #1
 function changer(string) {
-  const alphabet = /[a-z]/g
+  const letters = /[a-z]/g
   const vovels = /[aeiou]/g
 
   return string.toLowerCase()
-    .replace(alphabet, el => String.fromCharCode((el.charCodeAt() - 96) % 26 + 97))
+    .replace(letters, el => String.fromCharCode((el.charCodeAt() - 96) % 26 + 97))
     .replace(vovels, el => el.toUpperCase())
 }
 
-console.log(changer('z'), 'A')
-console.log(changer('dogs'), 'Epht')
-console.log(changer('Cat30'), 'dbU30')
-console.log(changer('Alice'), 'bmjdf')
-console.log(changer('sponge1'), 'tqpOhf1')
-console.log(changer('Hello World'), 'Ifmmp xpsmE')
+// #2
+function changer(string) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  const letters = /[a-z]/g
+  const vovels = /[aeiou]/g
+
+  return string.toLowerCase()
+    .replace(letters, el => alphabet[alphabet.indexOf(el.toLowerCase()) + 1] ?? alphabet[0])
+    .replace(vovels, el => el.toUpperCase())
+}
+
+console.log(changer('z') === 'A')
+console.log(changer('dogs') === 'Epht')
+console.log(changer('Cat30') === 'dbU30')
+console.log(changer('Alice') === 'bmjdf')
+console.log(changer('sponge1') === 'tqpOhf1')
+console.log(changer('Hello World') === 'Ifmmp xpsmE')
 
 // node "Change it up"
