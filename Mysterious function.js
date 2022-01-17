@@ -20,6 +20,7 @@ getNum(3479283469) ==> 5
 getNum(89282350306) ==> 8
 */
 
+// #1
 function getNum(number) {
   const str = String(number)
   let result = 0
@@ -36,6 +37,14 @@ function getNum(number) {
         break
     }
   }
+  return result
+}
+
+// #2
+function getNum(number) {
+  let result = 0
+  Array.from(String(number), Number)
+    .map((el) => el === 8 ? result += 2 : /[069]/.test(el) ? result++ : null)
   return result
 }
 
